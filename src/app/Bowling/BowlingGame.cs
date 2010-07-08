@@ -14,9 +14,18 @@ namespace Bowling
             isFirst = !isFirst;
             total += pins;
             
-            if (current + last == 10 && isFirst && totalThrows < 19)
+            if (((current + last == 10  && isFirst) || current == 10 )  && totalThrows < 19)
             {
                 total += pins;
+            }
+            if (last == 10 && totalThrows < 20)
+            {
+                total += pins;
+            }
+            if (pins == 10)
+            {
+                isFirst = !isFirst;
+                totalThrows++;
             }
             last = current;
             current = pins;
