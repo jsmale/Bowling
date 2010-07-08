@@ -31,6 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\tools\rhino\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.DevelopWithPassion">
+      <HintPath>..\..\..\tools\rhino\Machine.Specifications.DevelopWithPassion.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.DevelopWithPassion.Rhino">
+      <HintPath>..\..\..\tools\rhino\Machine.Specifications.DevelopWithPassion.Rhino.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\tools\rhino\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BowlingGameSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\app\Bowling\Bowling.csproj">
+      <Project>{59C37480-B888-497A-831A-993EA2F29326}</Project>
+      <Name>Bowling</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
