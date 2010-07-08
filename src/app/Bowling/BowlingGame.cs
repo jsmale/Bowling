@@ -2,16 +2,16 @@ namespace Bowling
 {
     public class BowlingGame
     {
-        private int Total { get; set; }
+        int total;
 
         public void Throw(int pins)
         {
-            Total += pins;
+            total += pins;
         }
 
         public int GetScore()
         {
-            return Total;
+            return total;
         }
     }
 }
