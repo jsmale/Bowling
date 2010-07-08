@@ -58,4 +58,25 @@ namespace Bowling.Test
 
         It ShouldHaveScoreOf100 = () => score.ShouldEqual(100);
     }
+
+    public class WhenThrowingAlternatingSparesFivesAndTwos : BowlingGameSpecs
+    {
+        Establish e = () =>
+        {
+            throws = new int[20];
+            for (int i = 0; i < throws.Length; i++)
+            {
+                if (i % 4 != 3)
+                {
+                    throws[i] = 5;
+                }
+                else
+                {
+                    throws[i] = 2;
+                }
+            }
+        };
+
+        It ShouldHaveScoreOf110 = () => score.ShouldEqual(110);
+    }
 }
