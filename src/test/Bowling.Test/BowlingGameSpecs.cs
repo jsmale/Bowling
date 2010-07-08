@@ -79,4 +79,18 @@ namespace Bowling.Test
 
         It ShouldHaveScoreOf110 = () => score.ShouldEqual(110);
     }
+
+    public class WhenThrowingAllFives : BowlingGameSpecs
+    {
+        Establish e = () =>
+        {
+            throws = new int[21];
+            for (int i = 0; i < throws.Length; i++)
+            {
+                throws[i] = 5;
+            }
+        };
+
+        It ShouldHaveScoreOf150 = () => score.ShouldEqual(150);
+    }
 }
