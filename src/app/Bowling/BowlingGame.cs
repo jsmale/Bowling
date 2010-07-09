@@ -10,15 +10,15 @@ namespace Bowling
 
         public void Throw(int pins)
         {
-            
+            totalThrows++;
             isFirst = !isFirst;
             total += pins;
-            
-            if (((current + last == 10  && isFirst) || current == 10 )  && totalThrows < 19)
+
+            if ((current + last == 10 || current == 10) && isFirst && totalThrows < 20)
             {
                 total += pins;
             }
-            if (last == 10 && totalThrows < 20)
+            if (last == 10 && totalThrows < 22)
             {
                 total += pins;
             }
@@ -29,7 +29,6 @@ namespace Bowling
             }
             last = current;
             current = pins;
-            totalThrows ++;
         }
 
         public int GetScore()

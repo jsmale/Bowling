@@ -114,4 +114,35 @@ namespace Bowling.Test
 
         It ShouldHaveScoreOf200 = () => score.ShouldEqual(200);
     }
+
+    public class WhenThrowingAPerfectGame : BowlingGameSpecs
+    {
+        Establish e = () =>
+        {
+            throws = new int[12];
+            for (int i = 0; i < throws.Length; i++)
+            {
+                throws[i] = 10;
+            }
+        };
+
+        It ShouldHaveScoreOf300 = () => score.ShouldEqual(300);
+    }
+
+    public class WhenAlternatingGuttersAndTens : BowlingGameSpecs
+    {
+        Establish e = () =>
+        {
+            throws = new int[21];
+            for (int i = 0; i < throws.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    throws[i] = 10;
+                }
+            }
+        };
+
+        It ShouldHaveScoreOf100 = () => score.ShouldEqual(100);
+    }
 }
